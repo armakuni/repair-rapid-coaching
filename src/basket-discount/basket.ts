@@ -1,11 +1,10 @@
-// type Item = {name: string, price: number, qty: number};
+type Item = {name: string, price: number, qty: number};
 
 export default class Basket {
 
-    // {name: "car", price: 50, qty: 1}
+    private thingAdded :boolean = false;
 
-    private thingAdded;
-    AddItem({ name, price, qty }) {
+    AddItem(_item: Item) {
         this.thingAdded = true;
         return;
     }
@@ -16,15 +15,19 @@ export default class Basket {
         }
         return 0
     }
+
     getTotalPrice() {
         return 0
     }
+
     discountApplied(){
         return 0
     }
+
     getDiscountValue() {
         return 0
     }
+
     getFinalTotalPrice() {
         return 0
     }
