@@ -2,7 +2,6 @@
   "name": "repair-rapid-coaching",
   "private": true,
   "version": "0.0.0",
-  "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
@@ -15,5 +14,12 @@
     "ts-jest": "^29.2.5",
     "typescript": "^5.5.3",
     "vite": "^5.4.1"
+  },
+  "moduleDirectories": [
+    "node_modules",
+    "src"
+  ],
+  "dependencies": {
+    "ts-node": "^10.9.2"
   }
 }
