@@ -1,3 +1,5 @@
+import Basket from "./basket.ts";
+
 describe('Discounting Basket', () => {
 
     // test('should apply 10% discount when basket > $200', () => {
@@ -29,25 +31,25 @@ describe('Discounting Basket', () => {
     // })
 
     test("should return 0 when the basket is empty", () => {
-        const basket = new Basket()
+        const basket = new Basket();
 
-        expect(basket.getItems()).toEqual(0); // Total items in basket
+        expect(basket.countItems()).toEqual(0); // Total items in basket
         expect(basket.getTotalPrice()).toEqual(0); // Subtotal
-        expect(basket.discountApplied).toEqual(0); // Applied discount
+        expect(basket.discountApplied()).toEqual(0); // Applied discount
         expect(basket.getDiscountValue()).toEqual(0); // Discount in $
         expect(basket.getFinalTotalPrice()).toEqual(0); // Final total
     })
 
-    // test("should add 1 item and return the item count", () => {
-    //     const basket = new Basket()
-    //     basket.AddItem({name: "car", price: 50, qty: 1})
-    //
-    //     expect(basket.getItems()).toEqual(1); // Total items in basket
-    //     expect(basket.getTotalPrice()).toEqual(50); // Subtotal
-    //     expect(basket.discountApplied).toEqual(0); // Applied discount
-    //     expect(basket.getDiscountValue()).toEqual(0); // Discount in $
-    //     expect(basket.getFinalTotalPrice()).toEqual(50); // Final total
-    // })
+    test("should add 1 item and return the item count", () => {
+        const basket = new Basket()
+        basket.AddItem({name: "car", price: 50, qty: 1})
+
+        expect(basket.countItems()).toEqual(1); // Total items in basket
+        expect(basket.getTotalPrice()).toEqual(50); // Subtotal
+        expect(basket.discountApplied).toEqual(0); // Applied discount
+        expect(basket.getDiscountValue()).toEqual(0); // Discount in $
+        expect(basket.getFinalTotalPrice()).toEqual(50); // Final total
+    })
     //
     // describe('when adding multiple items', () => {
     //     test('should add two of the same item - $20 each', () => {
