@@ -1,0 +1,20 @@
+# Justfile
+
+### Run tests
+test:
+    npm run test:unit
+
+### Install node modules
+install:
+    npm install
+
+### Run bdd scenarios
+features:
+    npm run test:bdd
+
+### Run bdd scenarios and push to report
+run-bdd-report:
+    npm run report
+
+### Run all the things
+all: install test features
